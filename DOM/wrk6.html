@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            border: 2px black solid;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="add()" id="button">button</button>
+    <div id="div"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p></div>
+    <script>
+        function add(){
+            var main = document.getElementById('div')
+            main.classList.add('a')
+            // etra time nikkanm nokkan
+            setTimeout(function(){
+                main.classList.remove('a')
+            },3000)
+        }
+    </script>
+</body>
+
+</html>

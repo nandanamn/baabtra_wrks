@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Style the quiz container */
+form {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Style quiz questions and answer options */
+li {
+    margin: 20px 0;
+}
+
+/* Style quiz results */
+#quizResults {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <h2>Quiz</h2>
+    <form id="quizForm">
+        <ol>
+            <li>
+                <p>What is the capital of France?</p>
+                <label>
+                    <input type="radio" name="q1" value="paris"> Paris
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="london"> London
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="berlin"> Berlin
+                </label>
+            </li>
+            <li>
+                <p>Which planet is known as the "Red Planet"?</p>
+                <label>
+                    <input type="radio" name="q2" value="venus"> Venus
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="mars"> Mars
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="jupiter"> Jupiter
+                </label>
+            </li>
+            <!-- Add more questions as needed -->
+        </ol>
+        <button type="button" id="submitQuiz">Submit</button>
+    </form>
+    <div id="quizResults"></div>
+
+    <script src="work19.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">loii</h1>
+    <p title="paragraph" id="paragraph1">loiiiii</p>
+    <ul id="list">
+        <li>kkk</li>
+        <li>ll</li>
+        <li>jj</li>
+    </ul>
+    <script>
+    var h = document.getElementById("heading")
+    console.log(h)
+    console.log("node type:",h.nodeType)
+   console.log("node name:",h.nodeName)
+   console.log("node value:",h.nodeValue)
+
+   var p =document.getElementById("paragraph") 
+   console.log(p)
+   console.log("node type:",p.nodeType)
+   console.log("node name:",p.nodeName)
+   console.log("node value:",p.nodeValue)
+   var textnode=p.firstChild
+   console.log(textnode)
+   console.log("node type:",textnode.nodeType)
+   console.log("node name:",textnode.nodeName)
+   console.log("node value:",textnode.nodeValue)
+   var listElement = document.getElementById("list")
+   console.log(listElement)
+   console.log("node type:",listElement.nodeType)
+   console.log("node name:",listElement.nodeName)
+   console.log("node value:",listElement.nodeValue)
+
+   var children= listElement.children
+   consol.log("child elements:",children)
+   console.log(children[0])
+   console.log(children[0].parentElement)
+   console.log(children[0].nextElementSibling)
+    </script>
+</body>
+</html>

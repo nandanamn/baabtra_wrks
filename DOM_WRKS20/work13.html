@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered List with Odd-Numbered Background Color</title>
+    <style>
+        /* Define a CSS class for the odd-numbered list items */
+        .odd-background {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ordered List with Odd-Numbered Background Color</h2>
+    <ol id="myList">
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+        <li>List Item 6</li>
+        <li>List Item 7</li>
+        <li>List Item 8</li>
+        <li>List Item 9</li>
+        <li>List Item 10</li>
+    </ol>
+
+    <script>
+        // Get the ordered list element
+        const olElement = document.getElementById('myList');
+
+        // Get all list items within the ordered list
+        const listItems = olElement.getElementsByTagName('li');
+
+        // Loop through the list items and add the 'odd-background' class to odd-numbered items
+        for (let i = 0; i < listItems.length; i++) {
+            if (i % 2 !== 0) { // Check if the item is odd-numbered
+                listItems[i].classList.add('odd-background');
+            }
+        }
+    </script>
+</body>
+</html>

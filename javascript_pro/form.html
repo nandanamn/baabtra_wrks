@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+   <script src="/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <form action=""><input type="text" name="" id="nInput">Name<br><input type="text" name="" id="aInput">Age<br><input
+    type="text" name="" id="sInput">Subject<br><input type="text" name="" id="pInput">Place<br><input
+    type="button" name="Add" value="Add" id="validate"></form>
+<table class="table" style="border:3px solid black;">
+<thead>
+    <tr>
+        <th scope="col">Sl no</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Place</th>
+        <th scope="col">status</th>
+        <th scope="col">Action</th>
+    </tr>
+</thead>
+<tbody id="tbody">
+</tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action=""><input type="text" name="" id="enInput">Name<br><input type="text" name=""
+                    id="eaInput">Age<br><input type="text" name="" id="esInput">Subject<br><input type="text"
+                    name="" id="epInput">Place<br></form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="uButton">Save
+                changes </button>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+var inputName = document.getElementById('nInput')
+var inputAge = document.getElementById('aInput')
+var inputSubject = document.getElementById('sInput')
+var inputPlace = document.getElementById('pInput')
+var EinputName = document.getElementById('enInput')
+var EinputAge = document.getElementById('eaInput')
+var EinputSub = document.getElementById('esInput')
+var EinputPlace = document.getElementById('epInput')
+var update = document.getElementById('uButton')
+var vButton = document.getElementById('validate')
+var tableBody = document.getElementById('tbody')
+var students = JSON.parse(localStorage.getItem('students')) || []
+console.log(students)
+i = 0
+list_students()
+function list_students() {
+    for (student of students) {
+        var row = tableBody.insertRow()
+        row.setAttribute('id', 'row' + i)
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1)
+        var cell3 = row.insertCell(2)
+        var cell4 = row.insertCell(3)
+        var cell5 = row.insertCell(4)
+        var cell6 = row.insertCell(5)
+        var cell7 = row.insertCell(6)
+        var cell8 = row.insertCell(7)
+        cell1.innerHTML = i + 1
+        cell2.innerHTML = student.name
+        cell3.innerHTML = student.age
+        cell4.innerHTML = student.subject
+        cell5.innerHTML = student.place
+        var statusButton = document.createElement('button')
+        statusButton.innerHTML = 'complete'
+        statusButton.onclick = function status() {
+            cell6.innerHTML = 'completed'
+        }
+        cell6.appendChild(statusButton)
+        var editButton = document.createElement('button')
+        editButton.innerHTML = 'Edit'
+        editButton.setAttribute('data-bs-toggle', 'modal')
+        editButton.setAttribute('data-bs-target', '#exampleModal')
+        editButton.addEventListener('click', function edit(event) {
+            elementid = event.target.parentElement.parentElement.id
+            index = Number(event.target.parentElement.childNodes[0].innerHTML) - 1
+            // var studentsJSON = localStorage.getItem('students')
+            // var students = JSON.parse(studentsJSON)
+            students[index].name = EinputName.value;
+            students[index].age = EinputAge.value;
+            students[index].subject = EinputSub.value;
+            students[index].place = EinputPlace.value;
+
+
+
+            localStorage.setItem('students', JSON.stringify(students))
+        })
+        cell7.appendChild(editButton)
+        var deleteButton = document.createElement('button')
+        deleteButton.innerHTML = 'delete'
+        deleteButton.addEventListener('click', function del(event) {
+            index = Number(event.target.parentElement.childNodes[0].innerHTML) - 1
+            students.splice(index, 1)
+            localStorage.setItem('students', JSON.stringify(students))
+            event.target.parentElement.parentElement.remove()
+        })
+        cell8.appendChild(deleteButton)
+        update.addEventListener('click', function change(event) {
+            row = document.getElementById(elementid)
+            cells = row.childNodes
+            cells[1].innerHTML = EinputName.value
+            cells[2].innerHTML = EinputAge.value
+            cells[3].innerHTML = EinputSub.value
+            cells[4].innerHTML = EinputPlace.value
+        })
+        i++
+    }
+}
+function Add() {
+    students.push({
+        name: inputName.value,
+        age: inputAge.value,
+        subject: inputSubject.value,
+        place: inputPlace.value
+    })
+    localStorage.setItem('students', JSON.stringify(students))
+    var row = tableBody.insertRow()
+    row.setAttribute('id', 'row' + i)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)
+    var cell3 = row.insertCell(2)
+    var cell4 = row.insertCell(3)
+    var cell5 = row.insertCell(4)
+    var cell6 = row.insertCell(5)
+    var cell7 = row.insertCell(6)
+    var cell8 = row.insertCell(7)
+    cell1.innerHTML = i + 1
+    cell2.innerHTML = inputName.value
+    cell3.innerHTML = inputAge.value
+    cell4.innerHTML = inputSubject.value
+    cell5.innerHTML = inputPlace.value
+    var statusButton = document.createElement('button')
+    statusButton.innerHTML = 'complete'
+    statusButton.onclick = function status() {
+        cell6.innerHTML = 'completed'
+    }
+    cell6.appendChild(statusButton)
+    var editButton = document.createElement('button')
+    editButton.innerHTML = 'Edit'
+    editButton.setAttribute('data-bs-toggle', 'modal')
+    editButton.setAttribute('data-bs-target', '#exampleModal')
+    editButton.addEventListener('click', function edit(event) {
+        elementid = event.target.parentElement.parentElement.id
+        EinputName.value = cell2.innerHTML
+        EinputAge.value = cell3.innerHTML
+        EinputSub.value = cell4.innerHTML
+        EinputPlace.value = cell5.innerHTML
+
+    })
+    cell7.appendChild(editButton)
+
+    var deleteButton = document.createElement('button')
+    deleteButton.innerHTML = 'delete'
+    deleteButton.addEventListener('click', function del(event) {
+        event.target.parentElement.parentElement.remove()
+    })
+    cell8.appendChild(deleteButton)
+    update.addEventListener('click', function change(event) {
+        row = document.getElementById(elementid)
+        cells = row.childNodes
+        cells[1].innerHTML = EinputName.value
+        cells[2].innerHTML = EinputAge.value
+        cells[3].innerHTML = EinputSub.value
+        cells[4].innerHTML = EinputPlace.value
+    })
+    i++
+}
+vButton.addEventListener('click', Add)  
+
+    </script>
+</body>
+
+</html>

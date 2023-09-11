@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Style the list */
+#sortableList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style list items */
+#sortableList li {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    cursor: grab;
+}
+
+/* Style list items while being dragged */
+#sortableList li.dragging {
+    background-color: #d0d0d0;
+}
+
+    </style>
+</head>
+<body>
+    <h2>Drag and Drop Example</h2>
+    <ul id="sortableList">
+        <li draggable="true">Item 1</li>
+        <li draggable="true">Item 2</li>
+        <li draggable="true">Item 3</li>
+        <li draggable="true">Item 4</li>
+        <li draggable="true">Item 5</li>
+    </ul>
+
+    <script src="work20.js"></script>
+</body>
+</html>

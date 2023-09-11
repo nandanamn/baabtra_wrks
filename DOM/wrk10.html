@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS for the paragraph with the mouseover effect */
+        #myParagraph {
+            color: black; /* Initial text color */
+            transition: color 0.3s; /* Smooth transition for color change */
+        }
+
+        /* CSS for the paragraph when the mouse pointer hovers over it */
+        #myParagraph:hover {
+            color: red; /* Text color when the mouse pointer is over the paragraph */
+        }
+    </style>
+</head>
+<body>
+    <p id="myParagraph">Hover over me to change my text color!</p>
+
+    <script>
+        // JavaScript to handle the mouseout effect (revert color)
+        const paragraph = document.getElementById('myParagraph');
+
+        paragraph.addEventListener('mouseout', () => {
+            paragraph.style.color = 'black'; // Revert to the initial text color
+        });
+    </script>
+</body>
+</html>

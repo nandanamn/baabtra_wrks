@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Fibonacci()">Fibonacci</button>
+    <script>
+    function Fibonacci() {
+        var limit = Number(prompt('enter the limit'))
+        var fibo = []
+        if (limit >= 1) {
+            fibo.push(0)
+        }
+        if (limit >= 2) {
+            fibo.push(1)
+        }
+        for (i = 2; i < limit; i++) {
+            var next = fibo[i - 1] + fibo[i - 2]
+             if (next >= limit) {
+                break
+            }
+            fibo.push(next)
+        }
+        console.log(fibo)
+    }
+    </script>
+</body>
+</html>

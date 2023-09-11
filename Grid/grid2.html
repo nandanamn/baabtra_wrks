@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .container {
+                display: grid;
+                grid-template-columns: 200px auto auto ;
+                grid-template-rows: 200px 200px;
+                grid-gap: 20px 100px;
+                align-content: baseline;
+                justify-content: center;
+            }
+            .item {
+                /* grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-column-end: 3; */
+                grid-area: 2/2/3/4;
+                background-color: darkcyan;
+            }
+            .container div{
+                border: 1px black solid;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1"><img src="images/facebook1.png" alt=""></div>
+        <div class="item2"><img src="images/facebook1.png" alt=""></div>
+        <div class="item3"><img src="images/facebook1.png" alt=""></div>
+        <div class="item"><img src="images/facebook1.png" alt=""></div>
+        <div class="item"><img src="images/facebook1.png" alt=""></div>
+        <div class="item"><img src="images/facebook1.png" alt=""></div>
+    </div>
+</body>
+</html>

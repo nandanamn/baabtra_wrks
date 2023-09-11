@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <style>
+    .container {        
+    text-align: center;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+
+input {
+  display: block;  
+  margin: 10px auto;
+  padding: 10px 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+  </style>
+</head>
+
+<body>
+    <script>
+        let input = document.querySelector("input");
+let btnCheck = document.querySelector("button");
+let output = document.querySelector("h1");
+
+btnCheck.addEventListener("click", () => {
+  let num = Number(input.value);
+  let result = num % 7 === 0 ? "Yes" : "No";
+  output.innerText = result;
+});
+    </script>
+
+  <div class="container">
+    <input type="number" placeholder="Enter Number">
+    <button>Check</button>
+    <h1>Result</h1>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

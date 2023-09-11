@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Items</title>
+</head>
+<body>
+    <h2>Click on an item:</h2>
+    <ul>
+        <li><button id="item1">Item 1</button></li>
+        <li><button id="item2">Item 2</button></li>
+        <li><button id="item3">Item 3</button></li>
+        <li><button id="item4">Item 4</button></li>
+        <li><button id="item5">Item 5</button></li>
+    </ul>
+
+    <script>
+        // Function to display a unique alert message for each item
+        function displayMessage(itemNumber) {
+            alert(`You clicked on Item ${itemNumber}`);
+        }
+
+        // Add click event listeners to each button
+        document.getElementById('item1').addEventListener('click', () => displayMessage(1));
+        document.getElementById('item2').addEventListener('click', () => displayMessage(2));
+        document.getElementById('item3').addEventListener('click', () => displayMessage(3));
+        document.getElementById('item4').addEventListener('click', () => displayMessage(4));
+        document.getElementById('item5').addEventListener('click', () => displayMessage(5));
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .visible{
+            background-color: blueviolet;
+            color: beige;
+            padding: 10px;
+            visibility: visible;
+
+        }
+        .hidden{
+            background-color: brown;
+            color: aqua;
+            padding: 10px;
+            /* visibility: hidden; */
+            display: none;
+        }
+        .opaque{
+            background-color: cyan;
+            color: blueviolet;
+            padding: 10px;
+            margin: 20px;
+            opacity: .1;
+        }
+        .transperent{
+            background-color: darkgoldenrod;
+            color: chartreuse;
+            padding: 10px;
+            margin: 20px;
+            opacity: .3;
+        }
+        .gradient{
+            height: 200px;
+            width: 200px;
+            background-image: linear-gradient(45deg,yellow,green,blue);
+            /* background-image: radial-gradient(circle,orange,white,green); */
+            box-shadow: 10px 8px 8px crimson;
+        }
+        .overflow{
+            height: 300px;
+            width: 200px;
+            border: 1px solid coral;
+            padding: 10px;
+            overflow: hidden;
+            overflow: scroll;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="visible">this is visible element</div>
+    <div class="hidden">this hidden element</div>
+    <div class="visible">this is visible element</div>
+<div class="opaque">this is opaque element</div>
+<p>this is a paragraph opaque element</p>
+<div class="transperent">this is transperent element</div>
+<p>this is a paragraph transperent element</p>
+<div class="gradient"></div>
+<div class="overflow">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi alias asperiores velit quis fugit nobis, quae voluptates doloribus, neque, illo dolorum. Nihil officia qui atque? Rerum sed harum inventore obcaecati quae! Expedita consequatur optio placeat itaque ipsam accusamus beatae iste, culpa impedit! Officia ratione voluptas, assumenda dolorum, sequi, maiores rerum eius quae accusamus aspernatur animi commodi minima. Libero consequatur veritatis consequuntur placeat accusamus ab eius porro officia dolorem ullam, ipsum autem reprehenderit. Nostrum deserunt at inventore delectus repudiandae amet impedit in tempora placeat quo consequuntur ex asperiores obcaecati totam, aliquam nihil dolorem nemo consectetur sequi ab quae deleniti. Commodi, aliquid?</p>
+</div>
+</body>
+</html>
